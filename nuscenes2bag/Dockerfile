@@ -6,7 +6,7 @@ RUN apt install -y python3-colcon-common-extensions
 
 RUN rm -rf /var/lib/apt/lists/*
 
-RUN pip3 install shapely numpy nuscenes-devkit mcap tqdm requests
+RUN pip3 install shapely numpy==1.26.4 nuscenes-devkit mcap tqdm requests
 RUN pip3 install git+https://github.com/DanielPollithy/pypcd.git
 
 COPY . /work
