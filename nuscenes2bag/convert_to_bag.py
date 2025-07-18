@@ -1,3 +1,10 @@
+# Monkey Patch: Use np.float to see if it still exists, else create an alias for it
+import numpy as np
+try:
+    _ = np.float
+except AttributeError:
+    np.float = float
+
 from utils import * 
 from sensor_utils import * 
 from annotation_utils import *
