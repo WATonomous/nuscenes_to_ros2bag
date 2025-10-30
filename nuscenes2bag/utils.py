@@ -13,7 +13,6 @@ from visualization_msgs.msg import ImageMarker, Marker, MarkerArray
 from geometry_msgs.msg import Point, Pose, PoseStamped, Transform, TransformStamped
 from tf2_msgs.msg import TFMessage
 import numpy as np
-from foxglove_msgs.msg import ImageMarkerArray
 from diagnostic_msgs.msg import DiagnosticArray, DiagnosticStatus, KeyValue
 
 from tqdm import tqdm
@@ -69,7 +68,7 @@ def create_topics(nusc, scene, writer):
                 name=topic + "/image_markers_lidar", type="visualization_msgs/msg/ImageMarker", serialization_format="cdr"
             ))
             writer.create_topic(rosbag2_py.TopicMetadata(
-                name=topic + "/image_markers_annotations", type="foxglove_msgs/msg/ImageMarkerArray", serialization_format="cdr"
+                name=topic + "/image_markers_annotations", type="visualization_msgs/msg/ImageMarker", serialization_format="cdr"
             ))
     
     # pose

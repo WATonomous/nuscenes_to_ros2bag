@@ -19,10 +19,7 @@ def write_boxes_imagemarkers(nusc, bag, anns, sample_data, frame_id, topic_ns, s
     marker.points = [make_point2d(p) for p in collector.points]
     marker.outline_colors = [make_color(c) for c in collector.colors]
 
-    msg = ImageMarkerArray()
-    msg.markers = [marker]
-
-    bag.write(topic_ns + '/image_markers_annotations', serialize_message(msg), stamp)
+    bag.write(topic_ns + '/image_markers_annotations', serialize_message(marker), stamp)
 
 def get_lidar_imagemarkers(nusc, sample_lidar, sample_data, frame_id):
     # lidar image markers in camera frame
